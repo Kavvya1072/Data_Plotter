@@ -1,24 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import chart_studio.plotly as pl
 import plotly.offline as po
 import cufflinks as cf
 
-
-# In[2]:
-
-
 po.init_notebook_mode(connected = True)
 cf.go_offline()
-
-
-# In[3]:
 
 
 def createdata(data):
@@ -67,9 +57,6 @@ def createdata(data):
     return df1
 
 
-# In[4]:
-
-
 def plotter(plot):
     if(plot==1):
         finalplot = df1.iplot(kind='scatter')
@@ -87,10 +74,6 @@ def plotter(plot):
         finalplot = print('Select only between 1 to 7: ')
     return finalplot
     
-
-
-# In[5]:
-
 
 def plotter2(plot):
     col = input('Enter the number of columns you want to plot by selecting only 1 , 2 or 3: ')
@@ -159,9 +142,6 @@ def plotter2(plot):
     return finalplot
 
 
-# In[6]:
-
-
 def main(cat):
     if(cat == 1):
         print('Select the type of plot you need to plot by writing 1 to 6')
@@ -188,9 +168,6 @@ def main(cat):
         print('Please enter 1 or 2 and try again.') 
 
 
-# In[7]:
-
-
 print('Select the type of data you need to plot (By writing 1,2 or 3): ')
 print('1.Random data with 100 rows and 5 columns')
 print('2.Customize dataframe with 5 columns and 4 rows')
@@ -199,28 +176,15 @@ data = int(input())
 df1 = createdata(data)
 
 
-# In[ ]:
-
-
 print('Your DataFrame head is given below check the columns to plot using cufflinks')
 df1.head()
-
-
-# In[ ]:
 
 
 print('What kind of plot you need , the complete data plot or columns plot : ')
 cat = input('Press 1 for plotting all columns or press 2 for specifying columns to plot : ')
 cat = int(cat)
 
-
-# In[ ]:
-
-
 main(cat)
-
-
-# In[ ]:
 
 
 
